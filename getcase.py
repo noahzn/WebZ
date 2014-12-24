@@ -5,7 +5,6 @@
 # file, You can obtain one at http://mozilla.org/MPL/2.0/.
 #
 # Name: WebZ
-# Version: 0.0.2.141202
 # Description: keyword-driven automated testing framework
 # Author: ZMAN(ZhangNing)
 #
@@ -27,7 +26,7 @@
 class case_format :
     
     def __init__(self) :
-        print("Step.1 GET TEST CASES")
+        print("Step.1 Get Test Cases")
 
 #if you write test cases in txt file, you can reference the following function        
     def case_in_txt(self, txt) :

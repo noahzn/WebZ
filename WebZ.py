@@ -5,11 +5,10 @@
 # file, You can obtain one at http://mozilla.org/MPL/2.0/.
 #
 # Name: WebZ
-# Version: 0.0.2.141202
 # Description: keyword-driven automated testing framework
 # Author: ZMAN(ZhangNing)
 #
-# This project also used some third-party modules:
+# This project also uses some third-party modules:
 #
 # selenium: Licensed under the Apache License, Version 2.0 (the "License");
 # Copyright 2008-2013 Software Freedom Conservancy.
@@ -29,7 +28,7 @@ import main
 
 if __name__ == '__main__' :
     print("Welcome to WebZ")
-    print("Ver 0.0.2.141202\n")
+    print("Ver 0.0.3.141203\n")
     main.main()
     
 else :

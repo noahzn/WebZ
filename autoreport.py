@@ -5,7 +5,6 @@
 # file, You can obtain one at http://mozilla.org/MPL/2.0/.
 #
 # Name: WebZ
-# Version: 0.0.2.141202
 # Description: keyword-driven automated testing framework
 # Author: ZMAN(ZhangNing)
 #

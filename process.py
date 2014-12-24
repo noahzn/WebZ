@@ -5,7 +5,6 @@
 # file, You can obtain one at http://mozilla.org/MPL/2.0/.
 #
 # Name: WebZ
-# Version: 0.0.2.141202
 # Description: keyword-driven automated testing framework
 # Author: ZMAN(ZhangNing)
 #
@@ -61,61 +60,76 @@ class process :
     def sendcase_fill(self, browser, widget, method, name, attr) :
         if widget == 'id' and method == 'fill' :
             cmethod = 'browser.find_by_id("%s").fill("%s")' %(name, attr)
-            flag2 = self.docase(browser,cmethod)
 
         elif widget == 'css' and method == 'fill' :
             cmethod = 'browser.find_by_css("%s").fill("%s")' %(name, attr)
-            flag2 = self.docase(browser,cmethod)
 
         elif widget == 'xpath' and method == 'fill' :
             cmethod = "browser.find_by_xpath('%s').fill('%s')" %(name, attr)
-            flag2 = self.docase(browser,cmethod)
-            
+
+
+        flag2 = self.docase(browser,cmethod)
+        return(flag2)
+
+    def sendcase_action2(self, browser, method, attr) :
+        if method == 'alert' :
+            if attr == '是' :
+                cmethod = 'browser.get_alert().accept()'
+            elif attr == '否' :
+                cmethod = 'browser.get_alert().dismiss()'
+
+        elif method == 'switch' :
+            if attr == '最新' :
+                cmethod = 'browser.switch_to_window(browser.windows[-1])'
+            else :
+                attr = int(attr)-1
+                cmethod = 'browser.switch_to_window(browser.windows[%d])' %attr
+
+
+        flag2 = self.docase(browser,cmethod)
         return(flag2)
 
 
     def sendcase_action(self, browser, method) :
         if method == 'back' :
             cmethod = 'browser.back()'
-            flag2 = self.docase(browser,cmethod)
 
         elif method == 'refresh' :
             cmethod = 'browser.reload()'
-            flag2 = self.docase(browser,cmethod)
 
         elif method == 'screenshot' :          
             cmethod = 'browser.screenshot(name="D:/WebZ/WebZ", suffix=".jpg")'
-            flag2 = self.docase(browser,cmethod)
 
         elif method == 'wait' :
             cmethod = 'time.sleep(2)'
-            flag2 = self.docase(browser,cmethod)
 
+
+        flag2 = self.docase(browser,cmethod)
         return(flag2)
 
 
     def sendcase_click_text(self, browser, method, name) :
         if method == 'click_text' :
             cmethod = 'browser.click_link_by_text("%s")' %name
-            flag2 = self.docase(browser,cmethod)
 
         elif method == 'visit' :
             if 'http://' not in name :
                 name = 'http://%s' %name
             cmethod = 'browser.visit("%s")' %name
-            flag2 = self.docase(browser,cmethod)
-            
+
+
+        flag2 = self.docase(browser,cmethod)  
         return(flag2)
 
     def mouse_move(self, browser, method, name) :
         if method == 'css' :
             cmethod = 'browser.find_by_css("%s").mouse_over()' %name
-            flag2 = self.docase(browser,cmethod)
 
         elif method == 'xpath' :
             cmethod = 'browser.find_by_xpath("%s").mouse_over()' %name
-            flag2 = self.docase(browser,cmethod)
-            
+
+
+        flag2 = self.docase(browser,cmethod)
         return(flag2)  
 
 
